@@ -1,3 +1,5 @@
+// import cardsMarkup from '../templates/card.hbs';
+
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
@@ -15,19 +17,23 @@ function createGalleryMarkup(galleryItems) {
     .map(({ preview, original, description }) => {
       return `
         <li class="gallery__item">
-   <a class="gallery__link" 
+   <a class="gallery__link"
    href="${original}">
       <img class="gallery__image"
-      src="${preview}" 
+      src="${preview}"
       alt="${description}"
       title= "${description}"
       loading="lazy"/>
-    
+
    </a>
 </li>`;
     })
     .join('');
 }
+
+// function createGalleryMarkup(galleryItems) {
+//   return galleryItems.map(cardsMarkup).join('');
+// }
 
 // Вставка разметки в контейнер галереи: С помощью galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup); вы вставляете сгенерированную разметку внутрь контейнера галереи.
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
