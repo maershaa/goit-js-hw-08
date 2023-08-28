@@ -29,15 +29,7 @@ player.on('play', onPlay);
 const savedTime = JSON.parse(localStorage.getItem('videoplayer-current-time'));
 if (savedTime) {
   player.setCurrentTime(savedTime).catch(function (error) {
-    switch (error.name) {
-      case 'RangeError':
-        // Время меньше 0 или больше продолжительности видео
-        break;
-
-      default:
-        // Произошла другая ошибка
-        break;
-    }
+    player.setCurrentTime(savedTime || 0);
   });
 }
 
@@ -59,7 +51,7 @@ player.on(
 ); // Один раз в секунду
 
 // Очистка локального хранилища при обновлении времени воспроизведения
-// Вы добавляете обработчик события input для элемента с id current-time (замените на свой), который очищает локальное хранилище при обновлении времени воспроизведения.
-currentTimeElement.addEventListener('input', function () {
+// Вы добавляете обработчик события input для элемента с id , который очищает локальное хранилище при обновлении времени воспроизведения.
+vimeoPlayer.addEventListener('input', function () {
   localStorage.clear();
 });

@@ -38,10 +38,4 @@ galleryContainer.addEventListener('click', open);
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt', // Атрибут, из которого брать текст для подписи к изображению
   captionsDelay: 250, // Задержка перед показом подписи (в миллисекундах) после открытия изображения
-
-  closeText: "<button class='custom-close' type='button'> &times; </button>",
-  navText: [
-    "<span class='custom-prev'>&#8249;</span>",
-    "<span class='custom-next'>&#8250;</span>",
-  ],
 });
