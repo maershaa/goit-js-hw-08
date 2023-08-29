@@ -27,11 +27,8 @@ player.on('play', onPlay);
 // Восстановление времени воспроизведения при загрузке страницы
 // Вы проверяете локальное хранилище на наличие сохраненного времени воспроизведения и устанавливаете его с помощью player.setCurrentTime(). Если возникнет ошибка (например, время за пределами допустимого диапазона), она будет обработана.
 const savedTime = JSON.parse(localStorage.getItem('videoplayer-current-time'));
-if (savedTime) {
-  player.setCurrentTime(savedTime).catch(function (error) {
-    player.setCurrentTime(savedTime || 0);
-  });
-}
+
+player.setCurrentTime(savedTime || 0);
 
 // Обработка события timeupdate с использованием lodash.throttle
 // Вы добавляете обработчик события timeupdate, который будет вызываться при обновлении времени воспроизведения видео. Внутри обработчика вы также сохраняете текущее время воспроизведения в локальное хранилище.

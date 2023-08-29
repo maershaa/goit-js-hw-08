@@ -70,7 +70,7 @@ function populateFormFields() {
       if (parsedData.hasOwnProperty(fieldName)) {
         const inputField = refs.form.querySelector(`[name="${fieldName}"]`);
         if (inputField) {
-          inputField.value = parsedData[fieldName];
+          inputField.value = parsedData[fieldName] || '';
           formData[fieldName] = parsedData[fieldName];
         }
       }

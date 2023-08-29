@@ -42,9 +42,6 @@ function createGalleryMarkup(galleryItems) {
 // Вставка разметки в контейнер галереи: С помощью galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup); вы вставляете сгенерированную разметку внутрь контейнера галереи.
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 
-// Этот код добавляет обработчик события клика на контейнере галереи.
-galleryContainer.addEventListener('click', open);
-
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt', // Атрибут, из которого брать текст для подписи к изображению
   captionsDelay: 250, // Задержка перед показом подписи (в миллисекундах) после открытия изображения
