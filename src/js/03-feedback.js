@@ -34,13 +34,10 @@ function onFormSubmit(evt) {
   // Объект result выводится в консоль.
   // Метод form.reset() вызывается для сброса значений полей формы.
   else {
-    // Если оба поля заполнены, вызывается функция populateFormFields, которая заполнит объект formData и сохранит его в локальное хранилище.
-    populateFormFields();
+    // После этого выполняется сброс значений полей формы с помощью evt.currentTarget.reset(), и данные удаляются из локального хранилища с помощью localStorage.removeItem(STORAGE_KEY).
+    evt.currentTarget.reset();
+    localStorage.removeItem(STORAGE_KEY);
   }
-  // После этого выполняется сброс значений полей формы с помощью evt.currentTarget.reset(), и данные удаляются из локального хранилища с помощью localStorage.removeItem(STORAGE_KEY).
-  evt.currentTarget.reset();
-
-  localStorage.removeItem(STORAGE_KEY);
 }
 
 // Далее, определены функции onInput и onTextareaInput, которые вызываются при вводе данных в поля ввода email и message. Внутри этих функций значения записываются в объект formData, а затем вызывается функция saveDataToLocalStorage, чтобы сохранить обновленные данные в локальное хранилище.
@@ -77,3 +74,6 @@ function populateFormFields() {
     }
   }
 }
+
+// функция populateFormFields заполнит объект formData и сохранит его в локальное хранилище.
+populateFormFields();
