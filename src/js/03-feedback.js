@@ -37,6 +37,8 @@ function onFormSubmit(evt) {
     // После этого выполняется сброс значений полей формы с помощью evt.currentTarget.reset(), и данные удаляются из локального хранилища с помощью localStorage.removeItem(STORAGE_KEY).
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
+    formData.email = '';
+    formData.message = '';
   }
 }
 
